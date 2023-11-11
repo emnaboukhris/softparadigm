@@ -1,0 +1,120 @@
+<div class="example mb-3">
+  <c-nav variant="tabs">
+    <c-nav-item>
+      <a [active]="true" [cTabContent]="tabContent" [fragment]="fragment" routerLink="./" [tabPaneIdx]="0" cNavLink>
+        <svg cIcon class="me-2" name="cilMediaPlay"></svg>
+        Preview
+      </a>
+    </c-nav-item>
+    <c-nav-item>
+      <a  [active]="false" [cTabContent]="tabContent" [fragment]="fragment" routerLink="./" [tabPaneIdx]="1" cNavLink>
+        <svg cIcon class="me-2" name="cilCode"></svg>
+        Update
+      </a>
+    </c-nav-item>
+
+  </c-nav>
+  <c-tab-content #tabContent="cTabContent" cRounded="bottom">
+    <c-tab-pane aria-labelledby="docs-code-preview" class="p-3 preview" role="tabpanel">
+      <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>{{about.title}}</h2>
+          </div>
+          <div class="row content">
+            <div class="col-lg-6">      
+        <p> {{about.leftText}}
+              </p>
+              <ul>
+                <div class="m-3" *ngFor="let listItem of about.list ">
+
+                <li><i class="ri-check-double-line"></i> {{listItem}} </li>
+                </div>
+        
+              </ul>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+              <p> {{about.rightText}}</p>
+              <a href="#" class="btn-learn-more">{{about.button}}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </c-tab-pane>
+    <c-tab-pane aria-labelledby="docs-code-preview" class="p-3 preview" role="tabpanel">
+        <c-col xs="12">
+            <c-card class="mb-4">
+              <c-card-header>
+                <strong>About Page</strong>
+              </c-card-header>
+              <c-card-body>
+                <form [formGroup]="updateAbout"(ngSubmit)="updateAboutUs()">
+                  
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter Title" formControlName="title" id="2">
+                  </div>
+               <br>
+               <div class="form-group">
+                <label>Left Text</label>
+                <textarea class="form-control" rows="3"
+                placeholder="Left Text"
+                formControlName="leftText"
+  
+                
+                ></textarea>
+              </div>
+              <br>
+
+              <div class="form-group">
+                <label>Right Text</label>
+                <textarea class="form-control"  rows="3"
+                placeholder="Right Text"
+                formControlName="rightText"
+  
+                
+                ></textarea>
+              </div>
+              <br>
+              <div class="form-group">
+               <label>Button</label>
+               <input type="text" class="form-control" placeholder="Enter Button Text" formControlName="button">
+             </div>  <br>
+             <div class="form-group">
+              <label>List</label>
+            <div class="input-group flex-nowrap">
+
+              <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping"
+              placeholder="Enter List" formControlName="list"
+              >
+              <button class="btn btn-outline-success" type="button" id="addon-wrapping" (click)="addElement()">+</button>
+
+            </div>
+            </div>
+            <h4 class="text-primary mt-4">Liste  : </h4>
+            <div style="overflow-y: auto; height: 350px;">
+              <div class="m-3" *ngFor="let task of updatedList ;let index = index">
+                  <div class=" border" id="tasks" >
+                      <div class="input-group row ps-3" >
+                          <div class="card col-md-10 border-0"> {{task}} </div>
+                          <button class="btn btn-outline-danger col"  data-bs-toggle="modal" type="button" data-bs-target="#exampleModal" (click)="deleteElement(index)" >X</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <br>
+
+
+            <div align="center">
+              <input  _ngcontent-hrr-c217="" cbutton="" color="primary" type="submit" value="UPDATE" class="me-1 btn btn-primary" ng-reflect-color="primary" ng-reflect-type="reset"  style="width: 200px" >
+  
+  
+            </div>
+                </form>
+                
+              </c-card-body>
+            </c-card>
+          </c-col>
+     </c-tab-pane>
+  </c-tab-content>
+</div>

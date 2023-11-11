@@ -1,0 +1,144 @@
+<div class="example mb-3">
+    <c-nav variant="tabs">
+      <c-nav-item>
+        <a [active]="true" [cTabContent]="tabContent" [fragment]="fragment" routerLink="./" [tabPaneIdx]="0" cNavLink>
+          <svg cIcon class="me-2" name="cilMediaPlay"></svg>
+          Preview
+        </a>
+      </c-nav-item>
+      <c-nav-item>
+        <a  [active]="false" [cTabContent]="tabContent" [fragment]="fragment" routerLink="./" [tabPaneIdx]="1" cNavLink>
+          <svg cIcon class="me-2" name="cilCode"></svg>
+          Update
+        </a>
+      </c-nav-item>
+  
+    </c-nav>
+    <c-tab-content #tabContent="cTabContent" cRounded="bottom">
+      <c-tab-pane aria-labelledby="docs-code-preview" class="p-3 preview" role="tabpanel">
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+              <div class="section-title">
+                <h2>Services</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+              </div>
+              <div class="row">
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <h4><a href="">Lorem Ipsum</a></h4>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bx-file"></i></div>
+                    <h4><a href="">Sed ut perspici</a></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                    <h4><a href="">Magni Dolores</a></h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bx-layer"></i></div>
+                    <h4><a href="">Nemo Enim</a></h4>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                    <h4><a href="">CMS</a></h4>
+                    <p>An easy and complete CMS & Blog Engine            </p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bx-file"></i></div>
+                    <h4><a href="">Sed ut perspici</a></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bx-tachometer"></i></div>
+                    <h4><a href="">Magni Dolores</a></h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="icon-box">
+                    <div class="icon"><i class="bx bx-layer"></i></div>
+                    <h4><a href="">Nemo Enim</a></h4>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </c-tab-pane>
+      <c-tab-pane aria-labelledby="docs-code-preview" class="p-3 preview" role="tabpanel">
+          <c-col xs="12">
+              <c-card class="mb-4">
+                <c-card-header>
+                  <strong>Services Page</strong>
+                </c-card-header>
+                <c-card-body>
+                    <form cForm>
+                      <div class="mb-3">
+                        <label cLabel for="abouttitleFormControlInput1">Title</label>
+                        <input cFormControl
+                               id="abouttitleFormControlInput1"
+                               placeholder="Title"
+                               type="text"  />
+                      </div>              
+                      <div class="mb-3">
+                        <label cLabel for="aboutleftTextFormControl">Left Text</label>
+                        <textarea cFormControl id="aboutleftTextFormControl" rows="3"
+                        placeholder="Left Text"
+          
+                        
+                        ></textarea>
+                      </div>
+                      <div class="mb-3">
+                          <label cLabel for="aboutRightTextFormControl">Right Text</label>
+                          <textarea cFormControl id="aboutRightTextFormControl" rows="3"
+                          placeholder="Right Text"
+                          ></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label cLabel for="abouttitleFormControlInput1">button</label>
+                          <input cFormControl
+                                 id="abouttitleFormControlInput1"
+                                 placeholder="button"
+                                 type="text"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label cLabel for="abouttitleFormControlInput1">List</label>
+                          <input cFormControl
+                                 id="abouttitleFormControlInput1"
+                                 placeholder="List"
+                                 type="text"
+                          />
+                        </div>  
+                    </form>
+                    <br>
+                    <div align="center">
+                      <input  _ngcontent-hrr-c217="" cbutton="" color="primary" type="reset" value="UPDATE" class="me-1 btn btn-primary" ng-reflect-color="primary" ng-reflect-type="reset"  style="width: 200px" >
+          
+          
+                    </div>
+                </c-card-body>
+              </c-card>
+            </c-col>
+       </c-tab-pane>
+    </c-tab-content>
+  </div>
+  

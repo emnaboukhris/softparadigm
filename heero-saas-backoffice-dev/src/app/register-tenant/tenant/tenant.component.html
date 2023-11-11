@@ -1,0 +1,79 @@
+<ngx-spinner type = "ball-scale-multiple"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="tenant lockscreen-wrapper bg-sc d-flex align-items-center justify-content-center">
+  <div class="coming-soon-wrapper  pt-lg-5">
+    <div class="mb-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="login-inner-wrapper-2 shadow-box p-4" style="padding-top: 8px !important;">
+            <div style="border-radius: 10px 10px 0 0;">
+              <div class="logo-sign text-center">
+                <img src="/assets/img/logo.png" style="width: 50%;" alt="">
+              </div>
+            </div>
+            <div style="padding: 30px;">
+              <div class="mb-4">
+                <p class="text-muted text-center font-weight-bold mb-0 letter-space-1"
+                   style="font-size: 16px;">{{'TRIAL'|translate}}</p>
+              </div>
+              <form [formGroup]="tenantForm" class="login-form">
+                <div class="form-group">
+                  <label class="form-control-label">{{ 'EMAIL' | translate }}</label>
+                  <input class="form-control session-input-font input-square" formControlName="email"
+                         placeholder="{{ 'EMAIL' | translate }}" required
+                         style="height: 40px !important;border-radius: 5px;" type="email"
+                         [class.ng-invalid]="formGroup['email'].touched && formGroup['email'].errors">
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">{{ 'PHONENUMBER' | translate }}</label>
+                  <input class="form-control session-input-font input-square" formControlName="phoneNumber"
+                         name="tel" placeholder="{{ 'PHONENUMBER' | translate }}" required
+                         style="height: 40px !important;border-radius: 5px;" type="text"
+                         [class.ng-invalid]="formGroup['phoneNumber'].touched && formGroup['phoneNumber'].errors">
+                </div>
+                <div class="form-group">
+                  <span class="form-control-label">{{ 'PASSWORD' | translate }}</span>
+                  <input class="form-control session-input-font input-square" formControlName="password"
+                         name="password" placeholder="{{ 'PASSWORD' | translate }}" required
+                         style="height: 40px !important;border-radius: 5px;" type="password"
+                         [class.ng-invalid]="formGroup['password'].touched && formGroup['password'].errors">
+                </div>
+                <div class="form-group">
+                  <span class="form-control-label">{{ 'STORE_NAME' | translate }}</span>
+                  <input class="form-control session-input-font input-square mbt-1" (keyup)="changeStoreUrl()"
+                         formControlName="StoreName"
+                         name="StoreName" placeholder="{{ 'STORE_NAME' | translate }}" required
+                         style="height: 40px !important;border-radius: 5px;" type="text"
+                         [class.ng-invalid]="(formGroup['StoreName'].touched && formGroup['StoreName'].errors) || erroMessage !== ''">
+                  <span class="text-danger" *ngIf="formGroup['StoreName'].touched || submitted && erroMessage !== ''">{{this.erroMessage | translate}}</span>
+                </div>
+                <div class="form-group">
+                  <span class="form-control-label">{{ 'STORE_URL' | translate }}</span>
+                  <input class="form-control session-input-font input-square" disabled
+                         [ngModelOptions]="{standalone: true}" [(ngModel)]="storUrl"
+                         name="StoreUrl" placeholder="{{ 'STORE_URL' | translate }}"
+                         style="height: 40px !important; border-radius: 5px;" type="text">
+                </div>
+                <div class="form-group">
+                  <span class="form-control-label">{{ 'PRODUCT_FAMILY' | translate }}</span>
+                  <select class="form-control" [(ngModel)]="selectProductFamily" formControlName="productFamily">
+                    <option *ngFor="let productFamily of productFamilyList"
+                            [value]="productFamily.id">{{productFamily.name}}</option>
+                  </select>
+                </div>
+                <div class="text-center">
+                  <button (click)="createNewStore()"
+                          class="btn btn-primary btn-block btn-lg btn-square"
+                          style="font-family: 'IBM Plex Sans', sans-serif !important; background-color: #047ad9;border-color: #047ad9;border-radius: 5px;"
+                          type="submit" [disabled]="tenantForm.invalid">
+                    <em aria-hidden="true" class="fas fa-sign-in"></em>
+                    {{'CREATE_YOUR_STORE' | translate | uppercase}}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

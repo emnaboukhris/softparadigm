@@ -1,0 +1,11 @@
+{
+  "CREATE_YOUR_STORE":"Créez votre magasin",
+  "EMAIL": "E-mail",
+  "PHONENUMBER": "Numéro de téléphone",
+  "PASSWORD": "Mot de passe",
+  "STORE_NAME": "Nom du magasin",
+  "STORE_URL": "URL du magasin",
+  "TRIAL": "Commencez votre essai gratuit de 14 jours de heero",
+  "PRODUCT_FAMILY": "Famille de produits",
+  "TENANT_ALREADY_EXIST":"Locataire existe déjà"
+}

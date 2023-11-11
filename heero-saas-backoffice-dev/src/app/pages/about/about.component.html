@@ -1,0 +1,24 @@
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>{{about.title}}</h2>
+    </div>
+    <div class="row content">
+      <div class="col-lg-6">      
+  <p> {{about.leftText}}
+        </p>
+        <ul>
+          <div class="m-3" *ngFor="let listItem of about.list ">
+
+            <li><i class="ri-check-double-line"></i> {{listItem}} </li>
+            </div>
+    
+        </ul>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0">
+        <p> {{about.rightText}}</p>
+        <a href="#" class="btn-learn-more">{{about.button}}</a>
+      </div>
+    </div>
+  </div>
+</section>

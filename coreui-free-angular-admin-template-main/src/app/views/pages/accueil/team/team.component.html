@@ -1,0 +1,170 @@
+<div class="example mb-3">
+  <c-nav variant="tabs">
+    <c-nav-item>
+      <a [active]="true" [cTabContent]="tabContent" [fragment]="fragment" routerLink="./" [tabPaneIdx]="0" cNavLink>
+        <svg cIcon class="me-2" name="cilMediaPlay"></svg>
+        Preview
+      </a>
+    </c-nav-item>
+    <c-nav-item>
+      <a  [active]="false" [cTabContent]="tabContent" [fragment]="fragment" routerLink="./" [tabPaneIdx]="1" cNavLink>
+        <svg cIcon class="me-2" name="cilCode"></svg>
+        Update
+      </a>
+    </c-nav-item>
+
+  </c-nav>
+  <c-tab-content #tabContent="cTabContent" cRounded="bottom">
+    <c-tab-pane aria-labelledby="docs-code-preview" class="p-3 preview" role="tabpanel">
+      <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>{{team.title}}</h2>
+           
+    
+            <p>{{team.subtitle}}</p>
+            <br>
+    
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 mt-4 mt-lg-0" *ngFor="let teamCard of TeamCards">
+                  <app-team-card [teamCard]="teamCard"></app-team-card>
+                  <br>
+                </div>
+              </div>
+            </div>
+    
+    
+        
+          </div>
+        </div>
+      </section>
+    </c-tab-pane>
+    <c-tab-pane aria-labelledby="docs-code-preview" class="p-3 preview" role="tabpanel">
+        <c-col xs="12">
+            <c-card class="mb-4">
+              <c-card-header>
+                <strong>Team Page</strong>
+              </c-card-header>
+              <c-card-body>
+                <form [formGroup]="updateTeamText"(ngSubmit)="updateTeam()">
+                  
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" placeholder="Enter Title" formControlName="title" id="2">
+                  </div>
+               <br>
+               <div class="form-group">
+                <label>Subtitle</label>
+                <textarea class="form-control" rows="3"
+                placeholder="Left Text"
+                formControlName="subtitle"
+  
+                
+                ></textarea>
+              </div>
+              <br>
+             <div class="form-group">
+              <label>List</label>
+            <div class="input-group flex-nowrap">
+
+              <input type="text" class="form-control"  aria-describedby="addon-wrapping"
+              placeholder="Enter List" formControlName="list"
+              >
+              <button class="btn btn-outline-success" type="button" id="addon-wrapping"
+              
+              data-bs-toggle="modal" type="button" data-bs-target="#exampleModal"
+              >+</button>
+
+            </div>
+            </div>
+            <h4 class="text-primary mt-4">Liste  : </h4>
+            <div style="overflow-y: auto; height: 350px;">
+              <div class="m-3" *ngFor="let task of TeamCards  ;let index = index">
+                  <div class=" border" id="tasks" >
+                      <div class="input-group row ps-3" >
+                          <div class="card col-md-10 border-0"> {{task.name}} </div>
+                          <button class="btn btn-outline-danger col"  data-bs-toggle="modal" type="button" data-bs-target="#exampleModal" >X</button>
+                          <button class="btn btn-outline-primary col me-2" data-bs-toggle="modal" type="button" data-bs-target="#exampleModal"  >e</button>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <br>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Team Member</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="AddTeamMember"(ngSubmit)="addTeamMember()">
+                  
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Title" formControlName="name" >
+                      </div>
+                   <br>
+                   <div class="form-group">
+                    <label>Specialite </label>
+                    <input type="text" class="form-control" placeholder="Enter Title" formControlName="specialite" >
+                  </div>
+               <br>
+               <div class="form-group">
+                <label>Description </label>
+                <input type="text" class="form-control" placeholder="Enter Title" formControlName="description" >
+              </div>
+           <br>
+           <div class="form-group">
+            <label>twiterLink </label>
+            <input type="text" class="form-control" placeholder="Enter Title" formControlName="twiterLink" >
+          </div>
+       <br>
+       <div class="form-group">
+        <label>facebookLink </label>
+        <input type="text" class="form-control" placeholder="Enter Title" formControlName="facebookLink" >
+      </div>
+   <br>
+
+   <div class="form-group">
+    <label>instagramLink  </label>
+    <input type="text" class="form-control" placeholder="Enter Title" formControlName="instagramLink" >
+  </div>
+<br>
+
+<div class="form-group">
+  <label>linkedinLink  </label>
+  <input type="text" class="form-control" placeholder="Enter Title" formControlName="linkedinLink" >
+</div>
+<br>
+<div class="form-group">
+  <label>Img </label>
+  <input type="text" class="form-control" placeholder="Enter Title" formControlName="img" >
+</div>
+<br>
+<div align="center">
+  <input  _ngcontent-hrr-c217="" cbutton="" color="primary" type="submit" value="SUBMIT" class="me-1 btn btn-primary" ng-reflect-color="primary" ng-reflect-type="reset"  style="width: 200px" >
+
+
+</div>
+                    </form>
+                  </div>
+              </div>
+              </div>
+          </div>
+
+            <div align="center">
+              <input  _ngcontent-hrr-c217="" cbutton="" color="primary" type="submit" value="UPDATE" class="me-1 btn btn-primary" ng-reflect-color="primary" ng-reflect-type="reset"  style="width: 200px" >
+  
+  
+            </div>
+                </form>
+                
+              </c-card-body>
+            </c-card>
+          </c-col>
+     </c-tab-pane>
+  </c-tab-content>
+</div>
